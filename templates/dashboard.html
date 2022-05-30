@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block page_content %}
+    
+    {% for message in get_flashed_messages() %}
+    <div class="alert alert-warning">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        {{ message }}
+    </div>
+    {% endfor %}
+
+    <div class="text-center">
+        <h1>Your Dashboard</h1>
+        <p></p>
+    </div>
+    
+{% endblock %}

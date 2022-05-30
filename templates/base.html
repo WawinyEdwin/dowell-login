@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DoWell-Login-Logic</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+<style>
+    * {
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "segoe ui", roboto, oxygen, ubuntu, cantarell, "fira sans", "droid sans", "helvetica neue", Arial, sans-serif;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    }
+    body {
+        margin: 0;
+    }
+    .bg-primar {
+        background-color:  #435165;;
+    }
+
+</style>
+<body>
+    <div class="navbar navbar-nav bg-primar ">
+        <div class="container-fluid">
+            <a href="/" class="navbar-brand">Do Well Research</a>
+            <div class="navbar-nav mr-auto">
+                <a href="{{ url_for('logout') }}" class="nav-item text-white">Logout</a>
+            </div>
+        </div>
+    </div>
+    <div class="content">
+         {% block page_content %} {% endblock %}
+    </div>
+   <!-- <script src="{{ url_for('static', filename='geolocation.js') }}"></script> -->
+</body>
+</html>
