@@ -50,7 +50,34 @@
         </form>
     </div>
     <script>
+    
+            function postData() {
+                $.ajax({
+                    type: "POST",
+                    url: "/getLocation/<locationInfo>",
+                    contentType: "application/json",
+                    data: JSON.stringify(doWelllocation()),
+                    dataType: "json",
+                    success: function (response) {
+                        console.log(response);
+                    },
+                    error: function (err) {
+                        console.log(err);
+                    }
+                })
+            }
         function doWelllocation(){
+            // get country and city info 
+            fetch('https://api.ipregistry.co/?key=tryout')
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function (payload) {
+                var country = payload.location.country.name;
+                var city = payload.location.city;
+
+                console.log(payload.location.country.name + ', ' + payload.location.city);
+            });
             if(!navigator.geolocation) {
                 alert('GeoLocation is not supported on this browser!')
                 return

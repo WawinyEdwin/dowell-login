@@ -159,6 +159,17 @@ def dowelllogin():
     else:
         return render_template('login.html', languages = languages)
 
+#get user location info
+@app.route('/getLocation/<locationInfo>')
+def getLocationInfo(locationInfo):
+    # if not locationInfo:
+    #     flash("Location Rights not Provided")
+    #     return False
+    # else:
+    #     flash("Location Permitted")
+    #     return True
+    return locationInfo
+
 # Check assigned user rights.
 def dowellconnection():
 
