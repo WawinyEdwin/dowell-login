@@ -113,12 +113,12 @@ MarkupSafe==2.0.1
 # torbrowser-launcher==0.3.3
 # tornado==6.1
 # traitlets==5.2.1.post0
-ufw==0.36
+# ufw==0.36
 # unattended-upgrades==0.1
 # urllib3==1.26.5
 virtualenv==20.14.1
-wcwidth==0.2.5
-webencodings==0.5.1
+# wcwidth==0.2.5
+# webencodings==0.5.1
 Werkzeug==1.0.1
 # xdg==5
 # youtube-dl==2021.6.6
