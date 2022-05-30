@@ -7,7 +7,7 @@ from functools import wraps
 IMAGE_FOLDER = './selfies'
 VOICE_FOLDER = './voices'
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder='templates')
 
 #secret key to sign our session
 app.secret_key = 'sometimesiwrite'
