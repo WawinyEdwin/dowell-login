@@ -124,14 +124,14 @@ def dowelllogin():
         if voice:
             voice = request.files['voice']
             voice_name = secure_filename(voice.filename)
-            voice.save(os.path.join(app.config['VOICE_FOLDER'], voice_name))
+            voice.save(voice_name)
             dowellvoiceID(voice_name)
 
         #if we have the selfie in request.
         if selfie:
             # Handle the selfie
             selfie_name = secure_filename(selfie.filename)
-            selfie.save(os.path.join(app.config['IMAGE_FOLDER'], selfie_name))
+            selfie.save(selfie_name)
             dowellfaceID(selfie_name)
 
         # Check login credentials and sign the session
