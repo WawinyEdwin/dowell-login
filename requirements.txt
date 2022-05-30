@@ -5,7 +5,7 @@ Babel==2.8.0
 backcall==0.2.0
 beautifulsoup4==4.9.3
 blinker==1.4
-brewer2mpl==1.4.1
+# brewer2mpl==1.4.1
 Brlapi==0.8.3
 certifi==2020.6.20
 chardet==4.0.0
