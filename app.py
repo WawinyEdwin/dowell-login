@@ -17,31 +17,20 @@ app.config['VOICE_FOLDER'] = VOICE_FOLDER
 
 #  Language detection.
 def languageDetection(word):
+    if not word or len(word) == 0 or re.search('[a-zA-Z]', word):
+        return {
+                "message": "String is empty or invalid",
+                "success": False,
+                "input_string": word
+            }
     try:
-        if not word:
-            return {
-                "message": "String is empty or invalid",
-                "success": False,
-                "input_string": word
-            }
-        if len(word) == 0:
-            return {
-                "message": "String is empty or invalid",
-                "success": False,
-                "input_string": word
-            }
-        if not re.search('[a-zA-Z]', word):
-            return {
-                "message": "String invalid characters",
-                "success": False,
-                "input_string": word
-            }
         detector = google_translator()
+
         return_data = list()
         language_list = []
+        
         for item in word.split(' '):
             detect_result = detector.detect(item)
-            print(detect_result)
             return_data.append(
                 {
                     "input_string": item,
@@ -63,9 +52,8 @@ def languageDetection(word):
             "message": "String is empty or invalid",
             "success": False
         }
-    return 
 
-#We protect our dshaboard Route
+# We protect our dashboard Route from unathorised access.
 def ensure_logged_in(fn):
     @wraps(fn)
     def wrapper(*args, **kwargs):
